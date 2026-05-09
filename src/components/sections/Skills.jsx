@@ -2,6 +2,7 @@ import React from 'react'
 import SectionHeading from '../ui/SectionHeading'
 import skillsData from '../../data/skills'
 import SkillPill from '../ui/SkillPill'
+import SkillsOrb from '../three/SkillsOrb'
 import { Code2, Brain, Cpu, Palette } from 'lucide-react'
 
 const ICONS = { Code2, Brain, Cpu, Palette }
@@ -10,6 +11,9 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 max-w-6xl mx-auto px-6">
       <SectionHeading label="// SKILLS" title="WHAT I KNOW" />
+      <div className="mb-12 rounded-xl overflow-hidden border border-navy-700 bg-navy-800/30">
+        <SkillsOrb />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
         {skillsData.map((cat, i) => {
           const Icon = ICONS[cat.icon] || Code2

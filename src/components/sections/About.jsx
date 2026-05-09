@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import SectionHeading from '../ui/SectionHeading'
+import GlobeScene from '../three/GlobeScene'
 
 export default function About() {
   return (
@@ -8,7 +9,9 @@ export default function About() {
       <SectionHeading label="// ABOUT ME" title="WHO I AM" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-8">
         <motion.div initial={{ x: -60, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} className="flex flex-col items-center gap-6">
-          <div className="w-60 h-60 rounded-lg border-2 border-cyan-400 bg-navy-800 flex items-center justify-center text-cyan-400/30 font-display text-8xl shadow-cyan-lg">LC</div>
+          <div className="w-60 h-60 rounded-lg border-2 border-cyan-400 bg-navy-800 overflow-hidden">
+            <GlobeScene />
+          </div>
           <div className="space-y-2 text-sm font-mono text-text-secondary text-left">
             <div className="flex items-center gap-2"><span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"/> Open to Opportunities</div>
             <div>Jose Rizal Memorial State University</div>

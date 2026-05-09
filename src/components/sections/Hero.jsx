@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import TypewriterText from '../ui/TypewriterText'
 import { ChevronDown } from 'lucide-react'
+import HeroScene from '../three/HeroScene'
 
 export default function Hero() {
   const roles = [
@@ -14,7 +15,8 @@ export default function Hero() {
 
   return (
     <section id="hero" className="h-screen flex flex-col items-center justify-center relative text-center py-24">
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="font-mono text-sm text-cyan-400 mb-4">[ PORTFOLIO ]</motion.div>
+      <HeroScene />
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="font-mono text-sm text-cyan-400 mb-4 z-10">[ PORTFOLIO ]</motion.div>
 
       <motion.h1 initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }} className="font-display font-bold tracking-widest text-5xl md:text-7xl lg:text-8xl text-text-primary uppercase">LANCER CELICIOUS</motion.h1>
 

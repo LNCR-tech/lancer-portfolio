@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 import { ThemeProvider } from './context/ThemeContext'
 import ParticleCanvas from './components/ui/ParticleCanvas'
 import Navbar from './components/layout/Navbar'
@@ -11,7 +13,14 @@ import Certifications from './components/sections/Certifications'
 import Contact from './components/sections/Contact'
 import ScrollProgress from './components/ui/ScrollProgress'
 
+gsap.registerPlugin(ScrollTrigger)
+
 function App() {
+  useEffect(() => {
+    // Refresh ScrollTrigger after all content is loaded
+    ScrollTrigger.refresh()
+  }, [])
+
   return (
     <ThemeProvider>
       <div className="relative min-h-screen bg-navy-950 text-text-primary font-body overflow-x-hidden dark:bg-navy-950">
